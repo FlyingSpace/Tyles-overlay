@@ -13,7 +13,7 @@
 (function() {
     'use strict';
 
-    const url = "https://cdn.discordapp.com/attachments/791310206994612247/1489356169569894430/overlay-01.png?ex=69d01e85&is=69cecd05&hm=dd1b52ddfb9b1f64f6459a08a99f9be38dc621b9b6abe5a625354edfffee0c25&";
+    const url = "https://github.com/FlyingSpace/Tyles-overlay/blob/main/overlay-01.png?raw=true";
     const dotScale = 0.45;
     const padding = 100; // Puffer für flüssiges Schieben
 
