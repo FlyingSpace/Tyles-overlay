@@ -6,16 +6,17 @@
 // @description  user overlay for r/tyles canvas V2
 // @match        https://tyles.place/*
 // @match        https://tyles.place
-// @grant        none
+// @connect      raw.githubusercontent.com
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 // feel free to use this!
 
 (function() {
     'use strict';
 
-    const url = "https://github.com/FlyingSpace/Tyles-overlay/blob/main/overlay-01.png?raw=true";
+    const url = "https://raw.githubusercontent.com/FlyingSpace/Tyles-overlay/refs/heads/main/overlay-01.png";
     const dotScale = 0.45;
-    const padding = 100; // Puffer für flüssiges Schieben
+    const padding = 100;
 
     let originalImageData = null;
     let imgWidth = 0;
@@ -29,8 +30,6 @@
         const rect = container.getBoundingClientRect();
         const zoomLevel = rect.width / imgWidth;
 
-        // Balance zwischen Schärfe und Ruckeln:
-        // Wir deckeln die Auflösung bei 16x. 32x ist oft der "Todesstoß" für den Grafikspeicher.
         let res = 4;
         if (zoomLevel > 20) res = 16;
         else if (zoomLevel > 8) res = 8;
